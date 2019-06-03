@@ -1,0 +1,27 @@
+{
+    "name": "walk/design-patterns.loc",
+    "authors": [
+        {
+            "name": "WalkWeb",
+            "email": "av18775@list.ru"
+        }
+    ],
+    "config": {
+        "soft-packages": true
+    },
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Patterns\\": "src/Patterns/",
+            "Tests\\": "tests/src/Patterns/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always"
+    }
+}
