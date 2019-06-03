@@ -3,8 +3,8 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Patterns\Singleton;
-use Patterns\SingletonBad;
+use Patterns\Singleton\Singleton;
+use Patterns\Singleton\SingletonBad;
 
 class SingletonTest extends TestCase
 {

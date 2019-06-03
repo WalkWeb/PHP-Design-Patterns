@@ -1,6 +1,6 @@
 <?php
 
-namespace Patterns;
+namespace Patterns\Singleton;
 
 /**
  * Этот класс НЕ выполняет паттерн синглтона
