@@ -1,6 +1,6 @@
 <?php
 
-namespace Patterns\DependencyInjection;
+namespace Patterns\DI;
 
 interface SchoolInterface
 {

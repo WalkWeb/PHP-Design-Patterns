@@ -1,6 +1,6 @@
 <?php
 
-namespace Patterns\DependencyInjection;
+namespace Patterns\DI;
 
 /**
  * Допустим, мы создаем какой-то функционал для школы. У нас есть сущность школьника и школы.

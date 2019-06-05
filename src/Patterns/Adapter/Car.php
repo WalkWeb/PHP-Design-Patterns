@@ -1,8 +1,8 @@
 <?php
 
-namespace Patterns\DependencyInjection;
+namespace Patterns\Adapter;
 
-class School implements SchoolInterface
+class Car implements CarInterface
 {
     private $name;
 

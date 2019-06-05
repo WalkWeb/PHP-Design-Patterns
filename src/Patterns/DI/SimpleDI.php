@@ -1,6 +1,6 @@
 <?php
 
-namespace Patterns\DependencyInjection;
+namespace Patterns\DI;
 
 /**
  * Если поставить задачу написания максимально простого класса, который бы реализовывал паттерн внедрения зависимости,
