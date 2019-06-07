@@ -16,6 +16,11 @@ namespace Patterns\Adapter;
  * есть класс А, который ожидает получить объект от интерфейса B, но нам нужно, чтобы он «скушал» объект от интерфейса
  * С. В этом случае мы используем адаптер и подменяем интерфейс В на С.
  *
+ *
+ *
+ *
+ *
+ *
  * @package Patterns\Adapter
  */
 class ProductAdapter implements ProductInterface
