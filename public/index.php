@@ -2,12 +2,15 @@
 
 include_once __DIR__ . '/../vendor/autoload.php';
 
-use Patterns\Decorator\Product;
-use Patterns\Decorator\PartnerProductDecorator;
+use Patterns\DIContainer\Application;
+use Patterns\DIContainer\Model;
 
+$application = new Application();
 
-$product = new Product(100, 200);
-$partnerProduct = new PartnerProductDecorator($product, 10, -20);
+try {
+    $model = $application->Model;
+    var_dump($model instanceof Model); // true
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 
-var_dump($partnerProduct->getBuyPrice());  // 110
-var_dump($partnerProduct->getSellPrice()); // 160
