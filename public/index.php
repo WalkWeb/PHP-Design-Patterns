@@ -2,10 +2,10 @@
 
 include_once __DIR__ . '/../vendor/autoload.php';
 
-use Patterns\DIContainer\Application;
+use Patterns\DIContainer\DIContainer;
 use Patterns\DIContainer\Model;
 
-$application = new Application();
+$application = new DIContainer();
 
 try {
     $model = $application->Model;

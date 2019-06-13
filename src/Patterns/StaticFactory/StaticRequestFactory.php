@@ -1,6 +1,6 @@
 <?php
 
-namespace Patterns\StaticRequestFactory;
+namespace Patterns\StaticFactory;
 
 use Patterns\SimpleFactory\Request;
 

@@ -16,7 +16,7 @@ namespace Patterns\DIContainer;
  * use Patterns\DIContainer\Application;
  * use Patterns\DIContainer\Model;
  *
- * $application = new Application();
+ * $application = new DIContainer();
  *
  * try {
  *     $model = $application->Model;
@@ -26,7 +26,7 @@ namespace Patterns\DIContainer;
  * }
  * @package Patterns\DIContainer
  */
-class Application
+class DIContainer
 {
     private $namespace = 'Patterns\DIContainer';
 

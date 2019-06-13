@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\Singleton;
 
 use PHPUnit\Framework\TestCase;
 use Patterns\Singleton\Singleton;

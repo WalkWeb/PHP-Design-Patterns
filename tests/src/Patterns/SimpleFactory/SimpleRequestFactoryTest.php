@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\SimpleFactory;
 
 use PHPUnit\Framework\TestCase;
 use Patterns\SimpleFactory\Request;

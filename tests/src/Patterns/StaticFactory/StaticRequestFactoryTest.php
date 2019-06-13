@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests;
+namespace Tests\StaticFactory;
 
 use PHPUnit\Framework\TestCase;
 use Patterns\SimpleFactory\Request;
-use Patterns\StaticRequestFactory\StaticRequestFactory;
+use Patterns\StaticFactory\StaticRequestFactory;
 
 class StaticRequestFactoryTest extends TestCase
 {
