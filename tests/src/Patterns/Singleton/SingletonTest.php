@@ -16,7 +16,7 @@ class SingletonTest extends TestCase
         $singleton1 = Singleton::getInstance();
         $singleton2 = Singleton::getInstance();
 
-        $this->assertSame($singleton1, $singleton2);
+        self::assertSame($singleton1, $singleton2);
     }
 
     /**
@@ -28,6 +28,6 @@ class SingletonTest extends TestCase
         $singleton1 = SingletonBad::getBadInstance();
         $singleton2 = SingletonBad::getBadInstance();
 
-        $this->assertNotSame($singleton1, $singleton2);
+        self::assertNotSame($singleton1, $singleton2);
     }
 }

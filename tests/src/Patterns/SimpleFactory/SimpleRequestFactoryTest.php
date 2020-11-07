@@ -16,6 +16,6 @@ class SimpleRequestFactoryTest extends TestCase
         $factory = new SimpleRequestFactory();
         $request = $factory->fromGlobals();
 
-        $this->assertInstanceOf(Request::class, $request);
+        self::assertInstanceOf(Request::class, $request);
     }
 }
