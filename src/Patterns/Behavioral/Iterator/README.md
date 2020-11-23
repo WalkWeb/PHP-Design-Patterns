@@ -36,8 +36,10 @@
             echo 'Некорректный элемент в массиве!';
             continue;
         }
+        
         // Чтобы IDE понимал, с объектом какого интерфейса мы работаем - ему об этому нужно указать отдельно
         /** @var $user UserInterface */
+        
         // Только после двух операций выше мы можем уверенно работать с объектом
         echo $user->getName() . '<br />';
     }
@@ -73,14 +75,17 @@
          * @var array
          */
         protected $elements = [];
+        
         /**
          * @var int
          */
         protected $iteration = 1;
+        
         /**
          * @var int
          */
         protected $limitIteration;
+        
         /**
          * @param int $limitIteration
          * @throws UserCollectionException
@@ -92,6 +97,7 @@
             }
             $this->limitIteration = $limitIteration;
         }
+        
         /**
          * @return int
          */
@@ -99,6 +105,7 @@
         {
             return $this->iteration;
         }
+        
         /**
          * @param UserInterface $user
          */
@@ -106,6 +113,7 @@
         {
             $this->elements[] = $user;
         }
+        
         /**
          * @return UserInterface
          */
@@ -113,6 +121,7 @@
         {
             return current($this->elements);
         }
+        
         /**
          * @return bool|float|int|string|null
          */
@@ -120,6 +129,7 @@
         {
             return key($this->elements);
         }
+        
         /**
          * @return mixed|void
          */
@@ -129,10 +139,12 @@
             var_dump($this->iteration);
             return next($this->elements);
         }
+        
         public function rewind(): void
         {
             reset($this->elements);
         }
+        
         /**
          * @return bool
          */
@@ -143,6 +155,7 @@
             }
             return key($this->elements) !== null;
         }
+        
         /**
          * @return int
          */
@@ -164,6 +177,7 @@
     $collection->add(new User('Паша'));
     $collection->add(new User('Юля'));
     $collection->add(new User('Оля'));
+    
     foreach ($collection as $user) {
         echo $user->getName() . '<br />'; // Маша Даша Паша
     }

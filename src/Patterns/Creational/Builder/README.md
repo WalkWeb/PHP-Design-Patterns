@@ -57,6 +57,7 @@
          * @var Query
          */
         private $query;
+        
         /**
          * @param Query|null $query
          */
@@ -64,6 +65,7 @@
         {
             $this->query = $query ?? new Query();
         }
+        
         /**
          * @param string $table
          * @return $this|QueryBuilderInterface
@@ -73,6 +75,7 @@
             $this->query->addPartSQL("SELECT * FROM $table ");
             return $this;
         }
+        
         /**
          * @param string $filed
          * @param string|int $value
@@ -92,6 +95,7 @@
             }
             return $this;
         }
+        
         /**
          * @param string $filed
          * @param $value
@@ -112,6 +116,7 @@
             }
             return $this;
         }
+        
         /**
          * @param string $filed
          * @param bool|null $asc
@@ -125,6 +130,7 @@
             }
             return $this;
         }
+        
         /**
          * @param int $limit
          * @return $this|QueryBuilderInterface
@@ -134,6 +140,7 @@
             $this->query->addPartSQL("LIMIT $limit ");
             return $this;
         }
+        
         /**
          * @return Query
          */
@@ -149,6 +156,7 @@
          * @var string
          */
         private $sql = '';
+        
         /**
          * @param string $sqlPart
          */
@@ -156,6 +164,7 @@
         {
             $this->sql .= $sqlPart;
         }
+        
         /**
          * @return string
          * @throws QueryException
