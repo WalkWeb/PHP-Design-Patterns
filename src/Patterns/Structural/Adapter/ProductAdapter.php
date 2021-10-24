@@ -2,22 +2,9 @@
 
 namespace Patterns\Structural\Adapter;
 
-/**
- * Адаптер, Декоратор и Прокси - это три паттерна, которые, если не вдаваться в назначение каждого из них, легко
- * перепутать.
- *
- * Официальная трактовка Адаптера:
- * «Привести нестандартный или неудобный интерфейс какого-то класса в интерфейс, совместимый с вашим кодом.»
- *
- * На мой взгляд более корректно и понятно определение звучит так:
- * «Адаптер используется для замены интерфейса у объекта»
- *
- * Удобный, нестандартный, это слишком абстрактные понятия. На практике, задача, которая решается адаптером проста -
- * есть класс А, который ожидает получить объект от интерфейса B, но нам нужно, чтобы он «скушал» объект от интерфейса
- * С. В этом случае мы используем адаптер и подменяем интерфейс В на С.
- *
- * @package Patterns\Adapter
- */
+use Patterns\Structural\Adapter\CarModule\CarInterface;
+use Patterns\Structural\Adapter\ShopModule\ProductInterface;
+
 class ProductAdapter implements ProductInterface
 {
     private $product;
@@ -29,6 +16,11 @@ class ProductAdapter implements ProductInterface
 
     public function getName(): string
     {
-        return $this->product->getName();
+        return $this->product->name();
+    }
+
+    public function getPrice(): int
+    {
+        return $this->product->price();
     }
 }
