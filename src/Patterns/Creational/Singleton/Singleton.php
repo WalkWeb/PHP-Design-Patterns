@@ -2,32 +2,22 @@
 
 namespace Patterns\Creational\Singleton;
 
-/**
- * Singleton
- *
- * Синглтон написан таким образом, чтобы сколько раз его не создавали - он возвращает себя в единственном экземпляре,
- * т.е. везде это будет один и тот же объект.
- *
- * ПРИМЕНЕНИЕ:
- *
- * - Подключение к базе - если создавать подключение к базе обычным объектом, то на каждое создание такого объекта
- * будет создаваться отдельное подключение. Что, банально, может привести к ошибке "User has already more than max
- * active connections"
- *
- * - Любые ситуации, где у нас создается большая и сложная сущность, которая используется в разных частях фреймворка
- * (в middleware, в контроллере, в моделях), но при этом нам критична производительность, и создавать её каждый
- * раз с нуля (а при создании, к примеру, делается 20 запросов в базу) слишком накладно.
- *
- * НЕДОСТАТКИ:
- *
- * - Сложнее тестировать
- *
- * @package Patterns
- */
+use Exception;
+
 class Singleton
 {
-    /** @var Singleton - здесь хранится сам объект класса */
+    /**
+     * @var Singleton - здесь хранится сам объект класса
+     */
     private static $instance;
+
+    /**
+     * Строка случайных символов, которая генерируется при каждом создании объекта. По ней в тестах будем проверять,
+     * создается ли новый объект каждый раз, или получаем один и тот же
+     *
+     * @var string
+     */
+    private $hash;
 
     /**
      * Единственный метод, через который можно получить объект Singleton, и, который, собственно реализует логику
@@ -44,10 +34,19 @@ class Singleton
         return static::$instance;
     }
 
+    public function getHash(): string
+    {
+        return $this->hash;
+    }
+
     /**
-     * Защищаем наш синглтон от создания класса напрямую
+     * Защищает синглтон от создания классическим образом
+     *
+     * @throws Exception
      */
-    private function __construct() {}
+    private function __construct() {
+        $this->hash = $this->generateString();
+    }
 
     /**
      * Защищаем наш синглтон от клонирования
@@ -56,15 +55,27 @@ class Singleton
 
     /**
      * Блокируем сериализацию объекта
-     *
-     * phpStorm ругается на приватность этого метода, но на работу синглтона это никак не влияет
      */
     private function __sleep() {}
 
     /**
-     * Ну и unserialize() на всякий случай
-     *
-     * phpStorm ругается на приватность этого метода, но на работу синглтона это никак не влияет
+     * Ну и unserialize() за компанию
      */
     private function __wakeup() {}
+
+    /**
+     * @param int $length
+     * @return string
+     * @throws Exception
+     */
+    private function generateString($length = 15): string
+    {
+        $chars = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        $numChars = strlen($chars);
+        $string = '';
+        for ($i = 0; $i < $length; $i++) {
+            $string .= $chars[random_int(1, $numChars) - 1];
+        }
+        return $string;
+    }
 }
