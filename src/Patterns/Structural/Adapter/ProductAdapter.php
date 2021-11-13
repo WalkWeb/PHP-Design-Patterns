@@ -23,4 +23,9 @@ class ProductAdapter implements ProductInterface
     {
         return $this->product->price();
     }
+
+    public function getDescription(): string
+    {
+        return $this->product->description();
+    }
 }
