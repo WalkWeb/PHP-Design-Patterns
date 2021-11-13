@@ -4,10 +4,10 @@ namespace Patterns\Structural\Decorator;
 
 class Product
 {
-    /** @var int - Цена покупки продукта, для простоты примера укажем сразу в коде */
+    /** @var int - Цена покупки продукта */
     private $buyPrice;
 
-    /** @var int - Цена продажи продукта, для простоты примера укажем сразу в коде */
+    /** @var int - Цена продажи продукта */
     private $sellPrice;
 
     public function __construct(int $buyPrice, int $sellPrice)
