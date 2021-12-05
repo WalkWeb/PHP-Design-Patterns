@@ -55,8 +55,8 @@ class SchoolboyDI
         return $this->name;
     }
 
-    public function getSchoolName(): string
+    public function getSchool(): SchoolInterface
     {
-        return $this->school->getName();
+        return $this->school;
     }
 }

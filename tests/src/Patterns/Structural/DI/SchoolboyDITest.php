@@ -19,6 +19,6 @@ class SchoolboyDITest extends TestCase
         $schoolboy = new SchoolboyDI($schoolboyName, $school);
 
         self::assertEquals($schoolboyName, $schoolboy->getName());
-        self::assertEquals($schoolName, $schoolboy->getSchoolName());
+        self::assertEquals($schoolName, $schoolboy->getSchool()->getName());
     }
 }
