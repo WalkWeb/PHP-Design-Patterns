@@ -36,10 +36,41 @@ class UserCollectionTest extends TestCase
         self::assertEquals($limitIteration, $i);
     }
 
+    /**
+     * @throws UserCollectionException
+     */
+    public function testUserCollectionLimit(): void
+    {
+        $collection = new UserCollection(10);
+
+        $collection->add(new User('Маша'));
+        $collection->add(new User('Даша'));
+        $collection->add(new User('Паша'));
+
+        self::assertEquals(3, $collection->count());
+    }
+
     public function testUserCollectionIncorrectLimit(): void
     {
         $limitIteration = -1;
         $this->expectException(UserCollectionException::class);
         new UserCollection($limitIteration);
+    }
+
+    /**
+     * @throws UserCollectionException
+     */
+    public function testUserCollectionKey(): void
+    {
+        $collection = new UserCollection(10);
+
+        $collection->add(new User('Маша'));
+        $collection->add(new User('Даша'));
+
+        self::assertEquals(0, $collection->key());
+
+        $collection->next();
+
+        self::assertEquals(1, $collection->key());
     }
 }

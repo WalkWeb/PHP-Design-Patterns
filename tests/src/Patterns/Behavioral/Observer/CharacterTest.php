@@ -11,9 +11,9 @@ use Patterns\Behavioral\Observer\Character\Observer\Notification\NotificationObs
 use Patterns\Behavioral\Observer\Character\Observer\Notification\NotificationObserverInterface;
 use PHPUnit\Framework\TestCase;
 
-class CharacterObserversTest extends TestCase
+class CharacterTest extends TestCase
 {
-    public function testAchievementObserver(): void
+    public function testCharacterAchievementObserver(): void
     {
         $level = 4;
         $character = new Character($level);
@@ -34,7 +34,7 @@ class CharacterObserversTest extends TestCase
         }
     }
 
-    public function testNotificationObserver(): void
+    public function testCharacterNotificationObserver(): void
     {
         $level = 9;
         $character = new Character($level);
@@ -53,5 +53,18 @@ class CharacterObserversTest extends TestCase
             $character->levelUp();
             self::assertCount(1, $character->getNotifications());
         }
+    }
+
+    public function testCharacterDetach(): void
+    {
+        $character = new Character(10);
+        $observer = new AchievementObserver();
+        $character->attach($observer);
+
+        self::assertEquals(1, $character->getObservers()->count());
+
+        $character->detach($observer);
+
+        self::assertEquals(0, $character->getObservers()->count());
     }
 }

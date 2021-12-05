@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Behavioral\State;
+namespace Tests\Behavioral\State\Application;
 
 use Patterns\Behavioral\State\Application\Application;
 use Patterns\Behavioral\State\Application\State\ApplicationStateException;
@@ -177,5 +177,37 @@ class ApplicationTest extends TestCase
 
         $this->expectException(ApplicationStateException::class);
         $application->auctionEnd();
+    }
+
+    /**
+     * Тест а невозможность присоединиться к аукциону, который закрылся
+     *
+     * @throws ApplicationStateException
+     */
+    public function testApplicationCloseToSingUpFail(): void
+    {
+        $application = new Application();
+        $application->auctionStart();
+        $application->auctionEnd();
+        $application->auctionClosed();
+
+        $this->expectException(ApplicationStateException::class);
+        $application->singUp();
+    }
+
+    /**
+     * Тест неуспешного перехода заявки из статуса closed в статус closed
+     *
+     * @throws ApplicationStateException
+     */
+    public function testApplicationCloseToCloseFail(): void
+    {
+        $application = new Application();
+        $application->auctionStart();
+        $application->auctionEnd();
+        $application->auctionClosed();
+
+        $this->expectException(ApplicationStateException::class);
+        $application->auctionClosed();
     }
 }

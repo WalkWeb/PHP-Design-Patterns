@@ -3,6 +3,7 @@
 namespace Patterns\Behavioral\Observer\Character;
 
 use Patterns\Behavioral\Observer\Character\Observer\ObserverInterface;
+use SplObjectStorage;
 
 /**
  * Используем свой интерфейс, потому что использование SplSubject принудит нас использовать исключительно
@@ -21,4 +22,5 @@ interface CharacterInterface
     public function attach(ObserverInterface $observer): void;
     public function detach(ObserverInterface $observer): void;
     public function notify(): void;
+    public function getObservers(): SplObjectStorage;
 }

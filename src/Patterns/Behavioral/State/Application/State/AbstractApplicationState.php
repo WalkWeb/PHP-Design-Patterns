@@ -6,6 +6,11 @@ namespace Patterns\Behavioral\State\Application\State;
 
 use Patterns\Behavioral\State\Application\ApplicationInterface;
 
+/**
+ * Весь функционал реализуется в дочерних классах. По умолчанию любой функционал невозможен
+ *
+ * @package Patterns\Behavioral\State\Application\State
+ */
 abstract class AbstractApplicationState implements ApplicationStateInterface
 {
     /**

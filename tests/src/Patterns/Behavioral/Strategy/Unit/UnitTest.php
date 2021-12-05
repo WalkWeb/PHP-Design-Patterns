@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Behavioral\Strategy;
+namespace Tests\Behavioral\Strategy\Unit;
 
 use Patterns\Behavioral\Strategy\Unit\Strategy\CowardStrategy;
 use Patterns\Behavioral\Strategy\Unit\Strategy\FighterStrategy;
@@ -10,7 +10,7 @@ use Patterns\Behavioral\Strategy\Unit\Strategy\StrategyInterface;
 use Patterns\Behavioral\Strategy\Unit\Unit;
 use PHPUnit\Framework\TestCase;
 
-class UnitStrategyTest extends TestCase
+class UnitTest extends TestCase
 {
     /**
      * @dataProvider unitStrategyProvider
@@ -18,10 +18,11 @@ class UnitStrategyTest extends TestCase
      * @param string $strategyClass
      * @param string $message
      */
-    public function testUnitStrategy(string $name, string $strategyClass, string $message): void
+    public function testUnitStrategyCreate(string $name, string $strategyClass, string $message): void
     {
         $strategy = new $strategyClass();
         $unit = new Unit($name, $strategy);
+        self::assertEquals($name, $unit->getName());
         self::assertEquals($message, $unit->atMeetingEnemy());
     }
 

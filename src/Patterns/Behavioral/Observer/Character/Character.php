@@ -83,4 +83,9 @@ class Character implements CharacterInterface
     {
         $this->notifications[] = $notification;
     }
+
+    public function getObservers(): SplObjectStorage
+    {
+        return $this->observers;
+    }
 }
