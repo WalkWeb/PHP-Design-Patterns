@@ -60,6 +60,8 @@ class MySQLQueryBuilder implements QueryBuilderInterface
     }
 
     /**
+     * TODO Подумать как объединить с методом where()
+     *
      * @param string $filed
      * @param $value
      * @return QueryBuilderInterface

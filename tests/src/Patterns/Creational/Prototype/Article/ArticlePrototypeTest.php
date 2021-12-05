@@ -8,7 +8,7 @@ use Patterns\Creational\Prototype\Article\ArticlePrototype;
 use Patterns\Creational\Prototype\Article\ArticlePrototypeInterface;
 use PHPUnit\Framework\TestCase;
 
-class PrototypeTest extends TestCase
+class ArticlePrototypeTest extends TestCase
 {
     public function testPrototypeCopy(): void
     {
@@ -22,5 +22,6 @@ class PrototypeTest extends TestCase
 
         self::assertEquals($article->getTitle() . ArticlePrototypeInterface::COPY_SUFFIX, $cloneArticle->getTitle());
         self::assertEquals([], $cloneArticle->getComments());
+        self::assertEquals($description, $cloneArticle->getDescription());
     }
 }

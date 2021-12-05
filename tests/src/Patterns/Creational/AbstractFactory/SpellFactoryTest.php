@@ -19,7 +19,7 @@ class SpellFactoryTest extends TestCase
      * @throws DatabaseException
      * @throws SpellFactoryException
      */
-    public function testCreateSpell(int $id, $data): void
+    public function testSpellFactoryCreateSpell(int $id, $data): void
     {
         $database = new DatabaseMock();
         $factory = new SpellFactory($database);
@@ -35,13 +35,29 @@ class SpellFactoryTest extends TestCase
      * @throws DatabaseException
      * @throws SpellFactoryException
      */
-    public function testFailCreateSpell(): void
+    public function testSpellFactoryUndefinedSpell(): void
+    {
+        $id = 5;
+        $database = new DatabaseMock();
+        $factory = new SpellFactory($database);
+
+        $this->expectException(DatabaseException::class);
+        $this->expectExceptionMessage(DatabaseException::UNDEFINED_SPELL);
+        $factory->create($id);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws SpellFactoryException
+     */
+    public function testSpellFactoryUndefinedType(): void
     {
         $id = 3;
         $database = new DatabaseMock();
         $factory = new SpellFactory($database);
 
-        $this->expectException(DatabaseException::class);
+        $this->expectException(SpellFactoryException::class);
+        $this->expectExceptionMessage(SpellFactoryException::UNDEFINED_TYPE);
         $factory->create($id);
     }
 
