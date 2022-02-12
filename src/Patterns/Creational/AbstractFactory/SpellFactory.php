@@ -33,7 +33,7 @@ class SpellFactory implements SpellFactoryInterface
     {
         $data = $this->database->findOneById($id);
 
-        // todo здесь должна быть валидация данных, для простоты примера пропускаем
+        // Здесь должна быть проверка полученных данных, но для простоты примера пропускаем
 
         if ($data['type'] === SpellInterface::TYPE_HEAL) {
             return new HealSpell($data['id'], $data['type'], $data['name'], $data['power']);

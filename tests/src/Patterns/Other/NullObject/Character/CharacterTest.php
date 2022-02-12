@@ -17,7 +17,7 @@ class CharacterTest extends TestCase
     /**
      * @throws CharacterException
      */
-    public function testTrapEpisode(): void
+    public function testCharacterHandleTrapEpisode(): void
     {
         $hp = 100;
         $gold = 0;
@@ -36,7 +36,7 @@ class CharacterTest extends TestCase
     /**
      * @throws CharacterException
      */
-    public function testGoldEpisode(): void
+    public function testCharacterHandleGoldEpisode(): void
     {
         $hp = 100;
         $gold = 0;
@@ -55,7 +55,7 @@ class CharacterTest extends TestCase
     /**
      * @throws CharacterException
      */
-    public function testInfoEpisode(): void
+    public function testCharacterHandleInfoEpisode(): void
     {
         $hp = 100;
         $gold = 10;
@@ -69,5 +69,49 @@ class CharacterTest extends TestCase
 
         self::assertEquals($hp, $character->getHp());
         self::assertEquals($gold, $character->getGold());
+    }
+
+    /**
+     * Проверка получения исключения при получении неизвестного метода для обработки игрового события (Action)
+     *
+     * @throws CharacterException
+     */
+    public function testCharacterUndefinedHandleMethod(): void
+    {
+        $hp = 100;
+        $gold = 0;
+        $description = 'Вы наткнулись на ловушку и повредили ногу';
+
+        $actionMock = $this->createMock(TrapAction::class);
+        $actionMock->method('handleMethod')
+            ->willReturn($method = 'undefinedHandleMethod');
+
+        $character = new Character($hp, $gold);
+        $episode = new Episode($description, $actionMock);
+
+        $this->expectException(CharacterException::class);
+        $this->expectExceptionMessage(CharacterException::UNDEFINED_METHOD . ': '. $method);
+        $character->handleAction($episode->getAction());
+    }
+
+    /**
+     * Тест на получение очень большого урона - здоровье не должно опуститься ниже 0
+     *
+     * @throws CharacterException
+     */
+    public function testCharacterHandleOverDamageEpisode(): void
+    {
+        $hp = 100;
+        $gold = 0;
+        $description = 'Вы наткнулись на ловушку с огромным уроном';
+        $power = 500;
+
+        $character = new Character($hp, $gold);
+        $action = new TrapAction($power);
+        $episode = new Episode($description, $action);
+
+        $character->handleAction($episode->getAction());
+
+        self::assertEquals(0, $character->getHp());
     }
 }
