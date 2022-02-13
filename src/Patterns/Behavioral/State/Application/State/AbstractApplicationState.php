@@ -26,6 +26,11 @@ abstract class AbstractApplicationState implements ApplicationStateInterface
         $this->context = $context;
     }
 
+    public function setContext(ApplicationInterface $application): void
+    {
+        $this->context = $application;
+    }
+
     /**
      * @return string
      * @throws ApplicationStateException

@@ -26,17 +26,12 @@ class Application implements ApplicationInterface
     /**
      * @param ApplicationStateInterface $state
      */
-    public function setContext(ApplicationStateInterface $state): void
-    {
-        $this->state = $state;
-    }
-
-    /**
-     * @param ApplicationStateInterface $state
-     */
     public function transitionTo(ApplicationStateInterface $state): void
     {
         $this->state = $state;
+        // В текущей реализации контекст не меняется, но в классической реализации этого паттерна такой функционал
+        // добавляют
+        $this->state->setContext($this);
     }
 
     /**

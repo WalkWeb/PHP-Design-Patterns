@@ -9,7 +9,6 @@ use Patterns\Behavioral\State\Application\State\ApplicationStateInterface;
 interface ApplicationInterface
 {
     public function __construct();
-    public function setContext(ApplicationStateInterface $state): void;
     public function transitionTo(ApplicationStateInterface $state);
     public function auctionNew(): string;
     public function auctionStart(): string;

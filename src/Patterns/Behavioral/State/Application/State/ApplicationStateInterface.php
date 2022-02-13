@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Patterns\Behavioral\State\Application\State;
 
+use Patterns\Behavioral\State\Application\ApplicationInterface;
+
 interface ApplicationStateInterface
 {
     public const AUCTION_NEW    = 'Аукцион открыт';
@@ -19,4 +21,5 @@ interface ApplicationStateInterface
     public function auctionEnd(): string;
     public function auctionClosed(): string;
     public function singUp(): string;
+    public function setContext(ApplicationInterface $application): void;
 }
