@@ -39,29 +39,40 @@ class MySQLQueryBuilder implements QueryBuilderInterface
     /**
      * @param string $filed
      * @param string|int $value
+     * @param bool $andWhere
      * @return $this|QueryBuilderInterface
      * @throws MySQLQueryBuilderException
      */
-    public function where(string $filed, $value): QueryBuilderInterface
+    public function where(string $filed, $value, bool $andWhere = false): QueryBuilderInterface
     {
         if (!is_string($value) && !is_int($value)) {
             throw new MySQLQueryBuilderException(MySQLQueryBuilderException::INCORRECT_WHERE_PARAMETER);
         }
 
+        if ($andWhere) {
+            $this->query->addPartSQL('AND ');
+        }
+
         if (is_int($value)) {
-            $this->query->addPartSQL("WHERE $filed = $value ");
+            if ($andWhere) {
+                $this->query->addPartSQL("$filed = $value ");
+            } else {
+                $this->query->addPartSQL("WHERE $filed = $value ");
+            }
         }
 
         if (is_string($value)) {
-            $this->query->addPartSQL("WHERE $filed = '$value' ");
+            if ($andWhere) {
+                $this->query->addPartSQL("$filed = '$value' ");
+            } else {
+                $this->query->addPartSQL("WHERE $filed = '$value' ");
+            }
         }
 
         return $this;
     }
 
     /**
-     * TODO Подумать как объединить с методом where()
-     *
      * @param string $filed
      * @param $value
      * @return QueryBuilderInterface
@@ -69,19 +80,7 @@ class MySQLQueryBuilder implements QueryBuilderInterface
      */
     public function andWhere(string $filed, $value): QueryBuilderInterface
     {
-        $this->query->addPartSQL('AND ');
-
-        if (!is_string($value) && !is_int($value)) {
-            throw new MySQLQueryBuilderException(MySQLQueryBuilderException::INCORRECT_WHERE_PARAMETER);
-        }
-
-        if (is_int($value)) {
-            $this->query->addPartSQL("$filed = $value ");
-        }
-
-        if (is_string($value)) {
-            $this->query->addPartSQL("$filed = '$value' ");
-        }
+        $this->where($filed, $value, true);
 
         return $this;
     }
