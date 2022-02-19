@@ -1,5 +1,5 @@
 
-Примеры моей реализации паттернов проектирования на PHP. На данный момент реализовано 14 из 26 запланированных.
+Примеры моей реализации паттернов проектирования на PHP. На данный момент реализовано 15 из 26 запланированных.
 
 # Классические паттерны
 
@@ -22,7 +22,7 @@
 - [x] [Decorator](https://github.com/WalkWeb/PHP-Design-Patterns/tree/master/src/Patterns/Structural/Decorator)
 - [x] [Facade](https://github.com/WalkWeb/PHP-Design-Patterns/tree/master/src/Patterns/Structural/Facade)
 - [ ] Flyweight
-- [ ] Proxy
+- [x] [Proxy](https://github.com/WalkWeb/PHP-Design-Patterns/tree/master/src/Patterns/Structural/Proxy)
 
 ## Паттерны поведения (Behavioral)
  
