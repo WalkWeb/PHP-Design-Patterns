@@ -6,9 +6,9 @@ namespace Tests\Structural\DI;
 
 use Patterns\Structural\DI\School;
 use Patterns\Structural\DI\SchoolboyDI;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class SchoolboyDITest extends TestCase
+class SchoolboyDITest extends AbstractUnitTest
 {
     public function testSchoolboyDICreate(): void
     {

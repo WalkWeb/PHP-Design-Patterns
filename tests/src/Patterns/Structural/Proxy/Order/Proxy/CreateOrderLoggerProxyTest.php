@@ -40,10 +40,7 @@ class CreateOrderLoggerProxyTest extends AbstractUnitTest
         self::assertEquals($json, $log->getRequest());
         self::assertEquals($response, $log->getResponse());
         self::assertEquals('', $log->getError());
-        self::assertEquals(
-            (new DateTime())->format(self::DATE_FORMAT),
-            $log->getCreatedAt()->format(self::DATE_FORMAT)
-        );
+        self::assertEqualsDate(new DateTime(), $log->getCreatedAt());
     }
 
     /**
@@ -66,10 +63,7 @@ class CreateOrderLoggerProxyTest extends AbstractUnitTest
         self::assertEquals($json, $log->getRequest());
         self::assertEquals('', $log->getResponse());
         self::assertEquals(OrderException::CREATE_ERROR . ': ' . OrderException::INVALID_JSON, $log->getError());
-        self::assertEquals(
-            (new DateTime())->format(self::DATE_FORMAT),
-            $log->getCreatedAt()->format(self::DATE_FORMAT)
-        );
+        self::assertEqualsDate(new DateTime(), $log->getCreatedAt());
     }
 
     /**

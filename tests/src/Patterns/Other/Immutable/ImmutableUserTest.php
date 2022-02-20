@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Other\Immutable;
 
 use Patterns\Other\Immutable\ImmutableUser;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class ImmutableUserTest extends TestCase
+class ImmutableUserTest extends AbstractUnitTest
 {
     public function testImmutableUserRename(): void
     {

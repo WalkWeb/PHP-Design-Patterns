@@ -2,10 +2,10 @@
 
 namespace Tests\Creational\Singleton;
 
-use PHPUnit\Framework\TestCase;
 use Patterns\Creational\Singleton\Singleton;
+use src\AbstractUnitTest;
 
-class SingletonTest extends TestCase
+class SingletonTest extends AbstractUnitTest
 {
     /**
      * Создаем несколько переменных, с объектом Singleton, и проверяем, что в них находится один и тот же объект

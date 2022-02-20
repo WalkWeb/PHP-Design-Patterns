@@ -7,7 +7,7 @@ namespace Tests\Behavioral\State\Application;
 use Patterns\Behavioral\State\Application\Application;
 use Patterns\Behavioral\State\Application\State\ApplicationStateException;
 use Patterns\Behavioral\State\Application\State\ApplicationStateInterface;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
 /**
  * В тестах проверены все успешные и неуспешные переходы заявки из одного статуса в другой:
@@ -30,7 +30,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @package Tests\State
  */
-class ApplicationTest extends TestCase
+class ApplicationTest extends AbstractUnitTest
 {
     /**
      * Вариант обработки заявки по умолчанию

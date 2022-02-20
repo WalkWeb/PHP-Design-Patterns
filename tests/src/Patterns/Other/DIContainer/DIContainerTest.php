@@ -9,9 +9,9 @@ use Patterns\Other\DIContainer\DBConnection;
 use Patterns\Other\DIContainer\DIContainer;
 use Patterns\Other\DIContainer\DIContainerException;
 use Patterns\Other\DIContainer\Model;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class DIContainerTest extends TestCase
+class DIContainerTest extends AbstractUnitTest
 {
     /**
      * Тест на создание Model через контейнер внедрения зависимости, и что при повторном создании берется уже созданный

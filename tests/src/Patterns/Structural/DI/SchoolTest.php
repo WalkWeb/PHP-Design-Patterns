@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Structural\DI;
 
 use Patterns\Structural\DI\School;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class SchoolTest extends TestCase
+class SchoolTest extends AbstractUnitTest
 {
     public function testSchoolCreate(): void
     {

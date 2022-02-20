@@ -7,9 +7,9 @@ namespace Tests\Structural\Adapter;
 use Patterns\Structural\Adapter\CarModule\Car;
 use Patterns\Structural\Adapter\ProductAdapter;
 use Patterns\Structural\Adapter\ShopModule\Shop;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class ProductAdapterTest extends TestCase
+class ProductAdapterTest extends AbstractUnitTest
 {
     public function testProductAdapter(): void
     {

@@ -7,9 +7,9 @@ namespace Tests\Behavioral\Iterator;
 use Patterns\Behavioral\Iterator\User\User;
 use Patterns\Behavioral\Iterator\User\UserCollection;
 use Patterns\Behavioral\Iterator\User\UserCollectionException;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class UserCollectionTest extends TestCase
+class UserCollectionTest extends AbstractUnitTest
 {
     /**
      * @throws UserCollectionException

@@ -10,9 +10,9 @@ use Patterns\Other\NullObject\Character\Action\TrapAction;
 use Patterns\Other\NullObject\Character\Character;
 use Patterns\Other\NullObject\Character\CharacterException;
 use Patterns\Other\NullObject\Episode\Episode;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class CharacterTest extends TestCase
+class CharacterTest extends AbstractUnitTest
 {
     /**
      * @throws CharacterException

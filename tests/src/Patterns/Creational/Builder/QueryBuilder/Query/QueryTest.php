@@ -6,9 +6,9 @@ namespace Tests\Creational\Builder\QueryBuilder\Query;
 
 use Patterns\Creational\Builder\QueryBuilder\Query\Query;
 use Patterns\Creational\Builder\QueryBuilder\Query\QueryException;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class QueryTest extends TestCase
+class QueryTest extends AbstractUnitTest
 {
     /**
      * @throws QueryException

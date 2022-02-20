@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Structural\DI;
 
 use Patterns\Structural\DI\SimpleDI;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class SimpleDITest extends TestCase
+class SimpleDITest extends AbstractUnitTest
 {
     public function testSimpleDICreate(): void
     {

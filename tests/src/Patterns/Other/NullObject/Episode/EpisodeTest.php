@@ -6,9 +6,9 @@ namespace Tests\Other\NullObject\Episode;
 
 use Patterns\Other\NullObject\Character\Action\GoldAction;
 use Patterns\Other\NullObject\Episode\Episode;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class EpisodeTest extends TestCase
+class EpisodeTest extends AbstractUnitTest
 {
     public function testEpisodeCreate(): void
     {

@@ -6,9 +6,9 @@ namespace Tests\Creational\Prototype\Article;
 
 use Patterns\Creational\Prototype\Article\ArticlePrototype;
 use Patterns\Creational\Prototype\Article\ArticlePrototypeInterface;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class ArticlePrototypeTest extends TestCase
+class ArticlePrototypeTest extends AbstractUnitTest
 {
     public function testPrototypeCopy(): void
     {

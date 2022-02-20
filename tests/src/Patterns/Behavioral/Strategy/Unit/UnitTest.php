@@ -8,9 +8,9 @@ use Patterns\Behavioral\Strategy\Unit\Strategy\CowardStrategy;
 use Patterns\Behavioral\Strategy\Unit\Strategy\FighterStrategy;
 use Patterns\Behavioral\Strategy\Unit\Strategy\StrategyInterface;
 use Patterns\Behavioral\Strategy\Unit\Unit;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class UnitTest extends TestCase
+class UnitTest extends AbstractUnitTest
 {
     /**
      * @dataProvider unitStrategyProvider

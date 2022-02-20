@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Other\NullObject\Character\Action;
 
 use Patterns\Other\NullObject\Character\Action\TrapAction;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class TrapActionTest extends TestCase
+class TrapActionTest extends AbstractUnitTest
 {
     public function testTrapActionCreate(): void
     {

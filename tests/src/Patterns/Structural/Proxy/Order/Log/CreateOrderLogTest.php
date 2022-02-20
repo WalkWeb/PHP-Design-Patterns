@@ -19,10 +19,7 @@ class CreateOrderLogTest extends AbstractUnitTest
         $log = new CreateOrderLog($request);
 
         self::assertEquals($request, $log->getRequest());
-        self::assertEquals(
-            (new DateTime())->format(self::DATE_FORMAT),
-            $log->getCreatedAt()->format(self::DATE_FORMAT)
-        );
+        self::assertEqualsDate(new DateTime(), $log->getCreatedAt());
         self::assertFalse($log->isSuccess());
 
         $log->setSuccess(true);

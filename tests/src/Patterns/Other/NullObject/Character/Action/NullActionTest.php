@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Other\NullObject\Character\Action;
 
 use Patterns\Other\NullObject\Character\Action\NullAction;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class NullActionTest extends TestCase
+class NullActionTest extends AbstractUnitTest
 {
     public function testNullActionCreate(): void
     {

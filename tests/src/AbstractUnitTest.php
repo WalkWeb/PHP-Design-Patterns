@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace src;
 
+use DateTimeInterface;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
@@ -29,5 +30,21 @@ abstract class AbstractUnitTest extends TestCase
     protected function jsonEncode(array $data): string
     {
         return json_encode($data, JSON_THROW_ON_ERROR);
+    }
+
+    /**
+     * Метод для сравнения двух дат
+     *
+     * Так как реализации DateTimeInterface могут быть разными, сравнивать объекты через assertEquals() некорректно
+     *
+     * @param DateTimeInterface $expectedDate
+     * @param DateTimeInterface $date
+     */
+    protected static function assertEqualsDate(DateTimeInterface $expectedDate, DateTimeInterface $date): void
+    {
+        self::assertEquals(
+            $expectedDate->format(self::DATE_FORMAT),
+            $date->format(self::DATE_FORMAT)
+        );
     }
 }

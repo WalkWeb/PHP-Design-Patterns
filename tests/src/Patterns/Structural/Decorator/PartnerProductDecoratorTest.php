@@ -6,9 +6,9 @@ namespace Tests\Structural\Decorator;
 
 use Patterns\Structural\Decorator\PartnerProductDecorator;
 use Patterns\Structural\Decorator\Product;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class PartnerProductDecoratorTest extends TestCase
+class PartnerProductDecoratorTest extends AbstractUnitTest
 {
     public function testPartnerProductDecoratorCreate(): void
     {

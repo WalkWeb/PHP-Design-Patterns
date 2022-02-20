@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Structural\Facade;
 
 use Patterns\Structural\Facade\Facade;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class FacadeTest extends TestCase
+class FacadeTest extends AbstractUnitTest
 {
     public function testFacadeGetRecommendation(): void
     {

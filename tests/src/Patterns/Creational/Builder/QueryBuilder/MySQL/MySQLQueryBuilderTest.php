@@ -7,9 +7,9 @@ namespace Tests\Creational\Builder\QueryBuilder\MySQL;
 use Patterns\Creational\Builder\QueryBuilder\MySQL\MySQLQueryBuilder;
 use Patterns\Creational\Builder\QueryBuilder\MySQL\MySQLQueryBuilderException;
 use Patterns\Creational\Builder\QueryBuilder\Query\QueryException;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class MySQLQueryBuilderTest extends TestCase
+class MySQLQueryBuilderTest extends AbstractUnitTest
 {
     /**
      * @throws MySQLQueryBuilderException

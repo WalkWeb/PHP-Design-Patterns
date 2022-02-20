@@ -8,9 +8,9 @@ use Patterns\Creational\AbstractFactory\Database\DatabaseException;
 use Patterns\Creational\AbstractFactory\Database\DatabaseMock;
 use Patterns\Creational\AbstractFactory\Spell\SpellFactoryException;
 use Patterns\Creational\AbstractFactory\SpellFactory;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class SpellFactoryTest extends TestCase
+class SpellFactoryTest extends AbstractUnitTest
 {
     /**
      * @dataProvider spellDataProvider

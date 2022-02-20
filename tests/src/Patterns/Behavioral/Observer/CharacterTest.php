@@ -9,9 +9,9 @@ use Patterns\Behavioral\Observer\Character\Observer\Achievement\AchievementObser
 use Patterns\Behavioral\Observer\Character\Observer\Achievement\AchievementObserverInterface;
 use Patterns\Behavioral\Observer\Character\Observer\Notification\NotificationObserver;
 use Patterns\Behavioral\Observer\Character\Observer\Notification\NotificationObserverInterface;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class CharacterTest extends TestCase
+class CharacterTest extends AbstractUnitTest
 {
     public function testCharacterAchievementObserver(): void
     {

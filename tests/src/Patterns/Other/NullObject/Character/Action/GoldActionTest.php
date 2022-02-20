@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Other\NullObject\Character\Action;
 
 use Patterns\Other\NullObject\Character\Action\GoldAction;
-use PHPUnit\Framework\TestCase;
+use src\AbstractUnitTest;
 
-class GoldActionTest extends TestCase
+class GoldActionTest extends AbstractUnitTest
 {
     public function testGoldActionCreate(): void
     {
