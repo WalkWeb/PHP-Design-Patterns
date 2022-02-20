@@ -2,5 +2,5 @@
 .phpunit.result.cache
 vendor
 
-# result code coverage (php vendor/bin/phpunit --coverage-html html)
+# result unit test coverage (php vendor/bin/phpunit --coverage-html html)
 html/
