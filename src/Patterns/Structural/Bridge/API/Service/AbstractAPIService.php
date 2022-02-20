@@ -26,7 +26,7 @@ abstract class AbstractAPIService
     abstract public function findProduct(string $id): array;
 
     /**
-     * Возвращает данные по указанному продуктам
+     * Возвращает данные по всем продуктам
      *
      * @return array
      */

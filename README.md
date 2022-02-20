@@ -17,7 +17,7 @@
 ## Структурные паттерны (Structural)
 
 - [x] [Adapter](https://github.com/WalkWeb/PHP-Design-Patterns/tree/master/src/Patterns/Structural/Adapter)
-- [ ] Bridge
+- [x] [Bridge](https://github.com/WalkWeb/PHP-Design-Patterns/tree/master/src/Patterns/Structural/Bridge)
 - [ ] Composite
 - [x] [Decorator](https://github.com/WalkWeb/PHP-Design-Patterns/tree/master/src/Patterns/Structural/Decorator)
 - [x] [Facade](https://github.com/WalkWeb/PHP-Design-Patterns/tree/master/src/Patterns/Structural/Facade)
