@@ -6,7 +6,7 @@ namespace Patterns\Structural\Bridge\API\Service;
 
 use Exception;
 
-class ServiceException extends Exception
+class ServiceAPIException extends Exception
 {
     public const FORBIDDEN = 'API method forbidden';
 }

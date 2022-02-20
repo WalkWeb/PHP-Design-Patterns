@@ -20,10 +20,10 @@ class UserServiceAPI extends AbstractAPIService
 
     /**
      * @return array
-     * @throws ServiceException
+     * @throws ServiceAPIException
      */
     public function findAllProducts(): array
     {
-        throw new ServiceException(ServiceException::FORBIDDEN . ': ' . __METHOD__, 404);
+        throw new ServiceAPIException(ServiceAPIException::FORBIDDEN, 404);
     }
 }

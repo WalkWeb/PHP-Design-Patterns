@@ -9,11 +9,11 @@ class DealerServiceAPI extends AbstractAPIService
     /**
      * @param string $id
      * @return array
-     * @throws ServiceException
+     * @throws ServiceAPIException
      */
     public function findProduct(string $id): array
     {
-        throw new ServiceException(ServiceException::FORBIDDEN . ': ' . __METHOD__, 404);
+        throw new ServiceAPIException(ServiceAPIException::FORBIDDEN, 404);
     }
 
     /**
